@@ -3,6 +3,7 @@ import { getUserByClerkId } from "@/utils/auth";
 import NewEntryCard from "@/components/NewEntryCard";
 import EntryCard from "@/components/EntryCard";
 import Link from "next/link";
+import { analyse } from "@/utils/ai";
 
 const getEntries = async () => {
     const user = await getUserByClerkId();
@@ -14,7 +15,7 @@ const getEntries = async () => {
         orderBy: {
             createdAt: 'desc'
         },
-    });
+    })
 
     return entries
 }
